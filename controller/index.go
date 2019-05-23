@@ -3,9 +3,9 @@ package controller
 import (
 	"gin_blog/models"
 	"github.com/gin-gonic/gin"
-	"gin_blog/system"
 	"github.com/russross/blackfriday"
 	"github.com/microcosm-cc/bluemonday"
+	"math"
 	"net/http"
 	"strconv"
 )
@@ -13,7 +13,7 @@ import (
 func IndexGet(c *gin.Context) {
 	var (
 		pageIndex int
-		pageSize = system.ConfigConent.Page.PageSize
+		pageSize = models.ConfigConent.PageSizeConfig.PageSize
 		total int
 		page string
 		err error
@@ -40,9 +40,30 @@ func IndexGet(c *gin.Context) {
 		post.Tags, _ = models.ListTagByPostId(strconv.FormatUint(uint64(post.ID), 10))
 		post.Body = policy.Sanitize(string(blackfriday.Run([]byte(post.Body))))
 	}
-	//user, _  = c.Get(CONTEXT_USER_KEY)
-	//c.HTML(http.StatusOK, "index/index.html", gin.H{
-	//
-	//})
+	user, _  := c.Get(CONTEXT_USER_KEY)
+	c.HTML(http.StatusOK, "index/index.html", gin.H{
+		"posts": posts,
+		"tags": models.MustListTag(),
+		"archives": models.MustListPostArchives(),
+		"links": models.MustListLinks(),
+		"user": user,
+		"pageIndex": pageIndex,
+		"totalPage":  int(math.Ceil(float64(total) / float64(pageSize))),
+		"path": c.Request.URL.Path,
+		"maxReadPosts": models.MustListMaxReadPost(),
+		"maxCommentPosts": models.MustListMaxCommentPost(),
+	})
 
+}
+
+func AdminIndex(c *gin.Context) {
+	user, _ := c.Get(CONTEXT_USER_KEY)
+	c.HTML(http.StatusOK, "admin/index.html",gin.H{
+		"pageCount":    models.CountPage(),
+		"postCount":    models.CountPost(),
+		"tagCount":     models.CountTag(),
+		"commentCount": models.CountComment(),
+		"user":         user,
+		"comments":     models.MustListUnreadComment(),
+	})
 }
