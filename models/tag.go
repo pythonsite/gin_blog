@@ -69,3 +69,7 @@ func CountTag() int {
 	return count
 }
 
+func (tag *Tag) Insert() error {
+	return DB.FirstOrCreate(tag, "name=?", tag.Name).Error
+}
+

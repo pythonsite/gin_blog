@@ -38,6 +38,9 @@ func main() {
 	{
 		authorized.GET("/index", controller.AdminIndex)
 		authorized.GET("/post", controller.PostIndex)
+		authorized.GET("/new_post", controller.PostNew)
+		authorized.POST("/new_post",controller.PostCreate)
+		authorized.POST("/new_tag", controller.TagCreate)
 	}
 	err := router.Run(":8090")
 	if err != nil {

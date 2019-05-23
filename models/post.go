@@ -51,6 +51,8 @@ func listPost(tag string, published bool, pageIndex, pageSize int)([]*Post, erro
 			} else {
 				err = DB.Where("is_published = ?", true).Order("created_at desc").Find(&posts).Error
 			}
+		} else {
+			err = DB.Order("created_at desc").Find(&posts).Error
 		}
 	}
 	return posts, err
@@ -143,3 +145,8 @@ func CountPost() int {
 	DB.Model(&Post{}).Count(&count)
 	return count
 }
+
+func (post *Post) Insert() error {
+	return DB.Create(post).Error
+}
+
