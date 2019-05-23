@@ -60,6 +60,10 @@ func ListPublishedPost(tag string, pageIndex, pageSize int)([]*Post,error) {
 	return listPost(tag, true, pageIndex, pageSize)
 }
 
+func ListAllPost(tag string)([]*Post, error) {
+	return listPost(tag, false, 0, 0)
+}
+
 func CountPostByTag(tag string)(count int,err error) {
 	var (
 		tagId uint64

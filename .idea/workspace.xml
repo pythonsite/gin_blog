@@ -2,29 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de7fb79b-a77e-4b7a-8f38-9621b6cc7966" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/controller/user.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/base.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/comment.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/link.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/page.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/post.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/postTag.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/subscriber.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/tag.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/user.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/template.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/util.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controller/post.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conf/config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/conf/config.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/common.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/common.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/index.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/index.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/log.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/models.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/initSystem.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/initSystem.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/index/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/index/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/post.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/post.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,8 +20,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="28" column="42" lean-forward="true" selection-start-line="28" selection-start-column="42" selection-end-line="28" selection-end-column="42" />
+            <state relative-caret-position="-1055">
+              <caret line="39" column="23" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
               <folding>
                 <element signature="n#!!block;n#setTemplate#0" />
               </folding>
@@ -47,10 +30,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="64">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/post.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="444">
-              <caret line="142" column="16" selection-start-line="142" selection-start-column="16" selection-end-line="142" selection-end-column="16" />
+            <state relative-caret-position="186">
+              <caret line="62" column="16" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="16" />
               <folding>
                 <element signature="e#16#61#0" expanded="true" />
                 <element signature="n#!!block;n#listPost#0" />
@@ -63,6 +55,31 @@
                 <element signature="n#!!block;n#ListMaxCommentPost#0" />
                 <element signature="n#!!block;n#MustListMaxCommentPost#0" />
                 <element signature="n#!!block;n#CountPost#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller/user.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="93" column="1" selection-start-line="93" selection-start-column="1" selection-end-line="93" selection-end-column="1" />
+              <folding>
+                <element signature="n#!!block;n#SignupPost#0" />
+                <element signature="n#!!block;n#SigninPost#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller/post.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="508">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
+              <folding>
+                <element signature="e#20#77#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -113,8 +130,10 @@
         <option value="$PROJECT_DIR$/utils/util.go" />
         <option value="$PROJECT_DIR$/models/user.go" />
         <option value="$PROJECT_DIR$/controller/user.go" />
-        <option value="$PROJECT_DIR$/main.go" />
         <option value="$PROJECT_DIR$/models/post.go" />
+        <option value="$PROJECT_DIR$/controller/post.go" />
+        <option value="$PROJECT_DIR$/main.go" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -139,26 +158,6 @@
             <path>
               <item name="gin_blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="gin_blog" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gin_blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gin_blog" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gin_blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gin_blog" type="462c0819:PsiDirectoryNode" />
-              <item name="log" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gin_blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gin_blog" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gin_blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gin_blog" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gin_blog" type="b2602c69:ProjectViewProjectNode" />
@@ -433,30 +432,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controller/user.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="88" column="9" selection-start-line="88" selection-start-column="9" selection-end-line="88" selection-end-column="9" />
+        <state relative-caret-position="476">
+          <caret line="93" column="1" selection-start-line="93" selection-start-column="1" selection-end-line="93" selection-end-column="1" />
           <folding>
-            <element signature="e#20#175#0" expanded="true" />
             <element signature="n#!!block;n#SignupPost#0" />
             <element signature="n#!!block;n#SigninPost#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="28" column="42" lean-forward="true" selection-start-line="28" selection-start-column="42" selection-end-line="28" selection-end-column="42" />
-          <folding>
-            <element signature="n#!!block;n#setTemplate#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/post.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="142" column="16" selection-start-line="142" selection-start-column="16" selection-end-line="142" selection-end-column="16" />
+        <state relative-caret-position="186">
+          <caret line="62" column="16" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="16" />
           <folding>
             <element signature="e#16#61#0" expanded="true" />
             <element signature="n#!!block;n#listPost#0" />
@@ -470,6 +458,33 @@
             <element signature="n#!!block;n#MustListMaxCommentPost#0" />
             <element signature="n#!!block;n#CountPost#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/post.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="508">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="e#20#77#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1055">
+          <caret line="39" column="23" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
+          <folding>
+            <element signature="n#!!block;n#setTemplate#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>

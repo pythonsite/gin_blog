@@ -196,3 +196,6 @@
 2019/05/23 16:00:46.418 [I]  init logs Adapter success
 2019/05/23 16:00:46.418 [I]  mysql dsn is:root:123456@(192.168.188.106:3306)/ginblog?charset=utf8&parseTime=True
 2019/05/23 16:00:46.424 [I]  gorm open db success
+2019/05/23 16:27:55.418 [I]  init logs Adapter success
+2019/05/23 16:27:55.418 [I]  mysql dsn is:root:123456@(192.168.188.106:3306)/ginblog?charset=utf8&parseTime=True
+2019/05/23 16:27:55.423 [I]  gorm open db success

@@ -37,6 +37,7 @@ func main() {
 	authorized.Use(AdminScopeRequired())
 	{
 		authorized.GET("/index", controller.AdminIndex)
+		authorized.GET("/post", controller.PostIndex)
 	}
 	err := router.Run(":8090")
 	if err != nil {
