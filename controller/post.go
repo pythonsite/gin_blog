@@ -119,3 +119,26 @@ func PostUpdate(c *gin.Context) {
 	}
 	c.Redirect(http.StatusMovedPermanently, "/admin/post")
 }
+
+func PostDelete(c *gin.Context) {
+	var (
+		err error
+		res = gin.H{}
+	)
+	defer writeJson(c, res)
+	id := c.Param("id")
+	pid, err := strconv.ParseUint(id,10, 64)
+	if err != nil {
+		res["message"] = err.Error()
+		return
+	}
+	post := &models.Post{}
+	post.ID = uint(pid)
+	err = post.Delete()
+	if err != nil {
+		res["message"] = err.Error()
+		return
+	}
+	_ = models.DeletePostTagByPostId(uint(pid))
+	res["succeed"] = true
+}

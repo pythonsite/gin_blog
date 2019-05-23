@@ -37,11 +37,14 @@ func main() {
 	authorized.Use(AdminScopeRequired())
 	{
 		authorized.GET("/index", controller.AdminIndex)
+		// post
 		authorized.GET("/post", controller.PostIndex)
 		authorized.GET("/new_post", controller.PostNew)
 		authorized.GET("/post/:id/edit", controller.PostEdit)
 		authorized.POST("/post/:id/edit", controller.PostUpdate)
 		authorized.POST("/new_post",controller.PostCreate)
+		authorized.POST("/post/:id/delete", controller.PostDelete)
+
 		authorized.POST("/new_tag", controller.TagCreate)
 	}
 	err := router.Run(":8090")

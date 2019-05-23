@@ -244,3 +244,7 @@
 2019/05/23 19:28:13.270 [I]  init logs Adapter success
 2019/05/23 19:28:13.270 [I]  mysql dsn is:root:123456@(192.168.188.106:3306)/ginblog?charset=utf8&parseTime=True
 2019/05/23 19:28:13.278 [I]  gorm open db success
+2019/05/23 19:56:41.559 [I]  init logs Adapter success
+2019/05/23 19:56:41.559 [I]  mysql dsn is:root:123456@(192.168.188.106:3306)/ginblog?charset=utf8&parseTime=True
+2019/05/23 19:56:41.567 [I]  gorm open db success
+2019/05/23 19:57:37.646 [E]  insert db error:<nil>
