@@ -39,6 +39,8 @@ func main() {
 		authorized.GET("/index", controller.AdminIndex)
 		authorized.GET("/post", controller.PostIndex)
 		authorized.GET("/new_post", controller.PostNew)
+		authorized.GET("/post/:id/edit", controller.PostEdit)
+		authorized.POST("/post/:id/edit", controller.PostUpdate)
 		authorized.POST("/new_post",controller.PostCreate)
 		authorized.POST("/new_tag", controller.TagCreate)
 	}

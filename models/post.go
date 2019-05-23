@@ -150,3 +150,26 @@ func (post *Post) Insert() error {
 	return DB.Create(post).Error
 }
 
+func (post *Post) Update() error {
+	return DB.Model(post).Updates(map[string]interface{}{
+		"title": post.Title,
+		"body": post.Body,
+		"is_published": post.IsPublished,
+	}).Error
+}
+
+func (post *Post) Delete() error {
+	return DB.Delete(post).Error
+}
+
+func GetPostById(id string) (*Post, error) {
+	pid, err := strconv.ParseUint(id, 10, 64)
+	if err != nil {
+		return nil, err
+	}
+	var post Post
+	err = DB.First(&post, "id=?", pid).Error
+	return &post, err
+}
+
+

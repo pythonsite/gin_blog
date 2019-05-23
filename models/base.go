@@ -5,7 +5,7 @@ import "time"
 type BaseModel struct {
 	ID uint `gorm:"primary_key"`
 	CreatedAt time.Time
-	UpdateAt time.Time
+	UpdatedAt time.Time
 }
 
 // query result
