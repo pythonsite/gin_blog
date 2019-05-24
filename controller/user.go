@@ -4,6 +4,8 @@ import (
 	"gin_blog/models"
 	"gin_blog/utils"
 	"github.com/astaxie/beego/logs"
+	"strconv"
+
 	//"github.com/gin-contrib/sessions"
 	"github.com/gin-gonic/contrib/sessions"
 	"github.com/gin-gonic/gin"
@@ -91,4 +93,65 @@ func LogoutGet(c *gin.Context) {
 	s.Clear()
 	_ = s.Save()
 	c.Redirect(http.StatusSeeOther, "/signin")
+}
+
+func UserIndex(c *gin.Context) {
+	users, _ := models.ListUsers()
+	logs.Info(users)
+	user, _ := c.Get(CONTEXT_USER_KEY)
+	c.HTML(http.StatusOK, "admin/user.html", gin.H{
+		"users": users,
+		"user": user,
+		"comments": models.MustListUnreadComment(),
+	})
+}
+
+func UserLock(c *gin.Context) {
+	var (
+		err error
+		_id uint64
+		res = gin.H{}
+		user *models.User
+	)
+	defer writeJson(c, res)
+	id := c.Param("id")
+	_id, err = strconv.ParseUint(id, 10, 64)
+	if err != nil {
+		res["message"]  = err.Error()
+		return
+	}
+	user, err = models.GetUser(uint(_id))
+	if err != nil {
+		res["message"] = err.Error()
+		return
+	}
+	user.LockState = !user.LockState
+	err = user.Lock()
+	if err != nil {
+		res["message"] = err.Error()
+		return
+	}
+	res["succeed"] = true
+}
+
+func UserDelete(c *gin.Context) {
+	var (
+		err error
+		res = gin.H{}
+	)
+	defer writeJson(c, res)
+	id := c.Param("id")
+	uid, err := strconv.ParseUint(id, 10, 64)
+	if err != nil {
+		res["message"] = err.Error()
+		return
+	}
+	user := &models.User{}
+	user.ID = uint(uid)
+	err = user.Delete()
+	if err != nil {
+		res["message"] = err.Error()
+		return
+	}
+	res["succeed"] = true
 }

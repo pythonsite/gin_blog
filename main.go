@@ -57,6 +57,12 @@ func main() {
 		// tag
 		authorized.POST("/new_tag", controller.TagCreate)
 
+		authorized.GET("/user", controller.UserIndex)
+		authorized.POST("/user/:id/lock", controller.UserLock)
+		authorized.POST("/user/:id/delete", controller.UserDelete)
+
+
+
 
 	}
 	err := router.Run(":8090")

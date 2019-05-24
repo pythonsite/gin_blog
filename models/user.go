@@ -25,6 +25,20 @@ func (user *User) Insert() error {
 	return DB.Create(user).Error
 }
 
+func (user *User) Update() error {
+	return DB.Save(user).Error
+}
+
+func (user *User) Delete() error {
+	return DB.Delete(user).Error
+}
+
+func (user *User) Lock() error {
+	return DB.Model(user).Update(map[string]interface{}{
+		"lock_state": user.LockState,
+	}).Error
+}
+
 func GetUserByUsername(username string)(*User, error) {
 	var user User
 	err := DB.First(&user, "email=?",username).Error
@@ -37,3 +51,8 @@ func GetUser(id interface{})(*User,error) {
 	return &user, err
 }
 
+func ListUsers()([]*User, error) {
+	var users []*User
+	err := DB.Find(&users, "is_admin=?", false).Error
+	return users,err
+}
