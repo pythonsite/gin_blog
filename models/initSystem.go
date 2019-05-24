@@ -23,9 +23,16 @@ type PageSizeConfig struct {
 	PageSize int `ini:"page_size"`
 }
 
+type SmtpConfig struct {
+	SmtpUserName string `ini:"smtp_username"`
+	SmtpPassword string `ini:"smtp_password"`
+	SmtpHost string `ini:"smtp_host"`
+}
+
 type Config struct {
 	MysqlConf  MySqlConfig `ini:"mysql"`
 	PageSizeConfig PageSizeConfig `ini:"page_size"`
+	SmtpConfig SmtpConfig `ini:"smtp"`
 }
 
 var ConfigConent *Config

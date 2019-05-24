@@ -11,6 +11,7 @@ require (
 	github.com/jinzhu/gorm v1.9.8
 	github.com/kr/pretty v0.1.0 // indirect
 	github.com/microcosm-cc/bluemonday v1.0.2
+	github.com/pkg/errors v0.8.0
 	github.com/pythonsite/iniConfig v0.0.0-20190522083436-7bb1daf30131
 	github.com/russross/blackfriday v2.0.0+incompatible
 	github.com/shurcooL/sanitized_anchor_name v1.0.0 // indirect

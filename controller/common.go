@@ -1,6 +1,8 @@
 package controller
 
 import (
+	"gin_blog/models"
+	"gin_blog/utils"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )
@@ -28,3 +30,10 @@ func HandleMessage(c *gin.Context, message string) {
 		"message": message,
 	})
 }
+
+func sendMail(to, subject, body string) error {
+	return utils.SendToMail(models.ConfigConent.SmtpConfig.SmtpUserName, models.ConfigConent.SmtpConfig.SmtpPassword, models.ConfigConent.SmtpConfig.SmtpHost,
+		to, subject, body, "html")
+}
+
+

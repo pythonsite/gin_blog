@@ -61,8 +61,15 @@ func main() {
 		authorized.POST("/user/:id/lock", controller.UserLock)
 		authorized.POST("/user/:id/delete", controller.UserDelete)
 
+		// subscriber
+		authorized.GET("/subscriber", controller.SubscriberIndex)
+		authorized.POST("/subscriber", controller.SubscriberPost)
 
-
+		// link
+		authorized.GET("/link", controller.LinkIndex)
+		authorized.POST("/new_link", controller.LinkCreate)
+		authorized.POST("/link/:id/edit", controller.LinkUpdate)
+		authorized.POST("/link/:id/delete", controller.LinkDelete)
 
 	}
 	err := router.Run(":8090")
