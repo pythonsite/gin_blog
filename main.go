@@ -41,6 +41,10 @@ func main() {
 		authorized.GET("/page", controller.PageIndex)
 		authorized.GET("/new_page", controller.PageNew)
 		authorized.POST("/new_page", controller.PageCreate)
+		authorized.GET("/page/:id/edit", controller.PageEdit)
+		authorized.POST("/page/:id/edit", controller.PageUpdate)
+		authorized.POST("/page/:id/publish", controller.PagePublish)
+		authorized.POST("/page/:id/delete", controller.PageDelete)
 
 		// post
 		authorized.GET("/post", controller.PostIndex)

@@ -257,3 +257,18 @@
 2019/05/23 20:23:59.021 [I]  init logs Adapter success
 2019/05/23 20:23:59.021 [I]  mysql dsn is:root:123456@(192.168.188.106:3306)/ginblog?charset=utf8&parseTime=True
 2019/05/23 20:23:59.027 [I]  gorm open db success
+2019/05/24 09:17:02.423 [I]  init logs Adapter success
+2019/05/24 09:17:02.423 [I]  mysql dsn is:root:123456@(192.168.188.106:3306)/ginblog?charset=utf8&parseTime=True
+2019/05/24 09:17:02.428 [I]  gorm open db success
+2019/05/24 09:27:54.655 [I]  init logs Adapter success
+2019/05/24 09:27:54.655 [I]  mysql dsn is:root:123456@(192.168.188.106:3306)/ginblog?charset=utf8&parseTime=True
+2019/05/24 09:27:54.664 [I]  gorm open db success
+2019/05/24 09:34:07.420 [I]  init logs Adapter success
+2019/05/24 09:34:07.420 [I]  mysql dsn is:root:123456@(192.168.188.106:3306)/ginblog?charset=utf8&parseTime=True
+2019/05/24 09:34:07.428 [I]  gorm open db success
+2019/05/24 09:44:25.089 [I]  init logs Adapter success
+2019/05/24 09:44:25.089 [I]  mysql dsn is:root:123456@(192.168.188.106:3306)/ginblog?charset=utf8&parseTime=True
+2019/05/24 09:44:25.094 [I]  gorm open db success
+2019/05/24 09:53:12.350 [I]  init logs Adapter success
+2019/05/24 09:53:12.350 [I]  mysql dsn is:root:123456@(192.168.188.106:3306)/ginblog?charset=utf8&parseTime=True
+2019/05/24 09:53:12.355 [I]  gorm open db success

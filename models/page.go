@@ -1,5 +1,7 @@
 package models
 
+import "strconv"
+
 type Page struct {
 	BaseModel
 	Title string
@@ -53,5 +55,15 @@ func CountPage() int {
 
 func ListAllPage()([]*Page, error) {
 	return listPage(false)
+}
+
+func GetPageById(id string)(*Page, error) {
+	pid, err := strconv.ParseUint(id,10,64)
+	if err != nil {
+		return nil,err
+	}
+	var page Page
+	err = DB.First(&page, "id=?", pid).Error
+	return &page, err
 }
 
