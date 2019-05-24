@@ -142,3 +142,17 @@ func PostDelete(c *gin.Context) {
 	_ = models.DeletePostTagByPostId(uint(pid))
 	res["succeed"] = true
 }
+
+func PostGet(c *gin.Context) {
+	id := c.Param("id")
+	post, err := models.GetPostById(id)
+	if err != nil || !post.IsPublished {
+		Handle404(c)
+		return
+	}
+	post.View++
+	_ = post.UpdateView()
+	post.Tags, _ = models.ListTagByPostId(id)
+	post.Comments, _ = ""
+
+}

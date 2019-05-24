@@ -49,9 +49,9 @@ func main() {
 		// post
 		authorized.GET("/post", controller.PostIndex)
 		authorized.GET("/new_post", controller.PostNew)
+		authorized.POST("/new_post",controller.PostCreate)
 		authorized.GET("/post/:id/edit", controller.PostEdit)
 		authorized.POST("/post/:id/edit", controller.PostUpdate)
-		authorized.POST("/new_post",controller.PostCreate)
 		authorized.POST("/post/:id/delete", controller.PostDelete)
 
 		// tag
