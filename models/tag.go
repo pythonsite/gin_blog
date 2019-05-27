@@ -1,14 +1,16 @@
 package models
 
 import (
+	"github.com/astaxie/beego/logs"
 	"strconv"
 	"strings"
+
 )
 
 type Tag struct {
 	BaseModel
 	Name string
-	Total int 	`gorm:"-"`
+	Total int    `gorm:"-"`
 }
 
 func ListTagByPostId(id string)([]*Tag, error) {
@@ -32,7 +34,8 @@ func ListTagByPostId(id string)([]*Tag, error) {
 
 func ListTag()([]*Tag, error) {
 	var tags []*Tag
-	rows, err := DB.Raw("select t.*, count(1) total from tags t inner join post_tags pt on t.id=pt.tag_id inner join posts p on pt.post_id=p.id where p.is_published=? group by pt.tag_id", true).Rows()
+	rows, err := DB.Raw("select t.*,count(*) total from tags t inner join post_tags pt on t.id = pt.tag_id inner join posts p on pt.post_id = p.id where p.is_published = ? group by pt.tag_id", true).Rows()
+	logs.Info("rows:%#v", rows)
 	if err != nil {
 		return nil, err
 	}
@@ -40,8 +43,10 @@ func ListTag()([]*Tag, error) {
 	for rows.Next(){
 		var tag Tag
 		_ = DB.ScanRows(rows, &tag)
+		logs.Info("%#v", tag)
 		tags = append(tags, &tag)
 	}
+	logs.Info("all tags:%#v",tags)
 	return tags, nil
 }
 

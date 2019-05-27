@@ -35,6 +35,8 @@ func main() {
 
 	router.GET("/post/:id", controller.PostGet)
 	router.GET("/link/:id", controller.LinkGet)
+	router.GET("/page/:id",controller.PageGet)
+	router.GET("/tag/:id", controller.TagGet)
 
 	authorized := router.Group("/admin")
 	authorized.Use(AdminScopeRequired())
