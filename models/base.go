@@ -7,11 +7,3 @@ type BaseModel struct {
 	CreatedAt time.Time
 	UpdatedAt time.Time
 }
-
-// query result
-type QrArchive struct {
-	ArchiveDate time.Time //month
-	Total       int       //total
-	Year        int       // year
-	Month       int       // month
-}

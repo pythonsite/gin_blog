@@ -3,7 +3,6 @@ package models
 import (
 	"database/sql"
 	"strconv"
-	"time"
 )
 
 type Post struct {
@@ -80,31 +79,6 @@ func CountPostByTag(tag string)(count int,err error) {
 		err = DB.Raw("select count(1) from posts p where p.is_published=?", true).Row().Scan(&count)
 	}
 	return
-}
-
-func ListPostArchives()([]*QrArchive, error) {
-	var archives []*QrArchive
-	querysql := `select strftime('%Y-%m', created_at) as month, count(*) as total from posts where is_published=? group by month order by month desc`
-	rows, err := DB.Raw(querysql, true).Rows()
-	if err != nil {
-		return  nil, err
-	}
-	defer rows.Close()
-	for rows.Next() {
-		var archive QrArchive
-		var month string
-		_ = rows.Scan(&month, &archive.Total)
-		archive.ArchiveDate, _ = time.Parse("2006-01",month)
-		archive.Year = archive.ArchiveDate.Year()
-		archive.Month = int(archive.ArchiveDate.Month())
-		archives = append(archives, &archive)
-	}
-	return archives, nil
-}
-
-func MustListPostArchives() []*QrArchive {
-	archives, _ := ListPostArchives()
-	return archives
 }
 
 func ListMaxReadPost() (posts []*Post, err error) {

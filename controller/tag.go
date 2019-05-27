@@ -2,6 +2,7 @@ package controller
 
 import (
 	"gin_blog/models"
+	"github.com/astaxie/beego/logs"
 	"github.com/gin-gonic/gin"
 	"github.com/microcosm-cc/bluemonday"
 	"github.com/russross/blackfriday"
@@ -44,6 +45,7 @@ func TagGet(c *gin.Context) {
 	if pageIndex <= 0 {
 		pageIndex = 1
 	}
+	logs.Info("list post by tag:%v",tagName)
 	posts, err = models.ListPublishedPost(tagName, pageIndex, pageSize)
 	if err != nil {
 		c.AbortWithStatus(http.StatusInternalServerError)
