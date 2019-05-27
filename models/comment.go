@@ -30,7 +30,7 @@ func MustListUnreadComment() []*Comment {
 	return comments
 }
 
-func ListCommentByPOstID(postId string)([]*Comment, error) {
+func ListCommentByPostID(postId string)([]*Comment, error) {
 	pid, err := strconv.ParseUint(postId, 10, 64)
 	if err != nil {
 		return  nil,err

@@ -2,6 +2,7 @@ package controller
 
 import (
 	"gin_blog/models"
+	"github.com/astaxie/beego/logs"
 	"github.com/gin-gonic/gin"
 	"net/http"
 	"strconv"
@@ -118,4 +119,21 @@ func PageDelete(c *gin.Context) {
 		return
 	}
 	res["succeed"] = true
+}
+
+func PageGet(c *gin.Context) {
+	id := c.Param("id")
+	page, err := models.GetPageById(id)
+	if err != nil || !page.IsPublished {
+		Handle404(c)
+		return
+	}
+	page.View++
+	err = page.UpdateView()
+	if err != nil {
+		logs.Error("update view error %s", err)
+	}
+	c.HTML(http.StatusOK, "page/display.html", gin.H{
+		"page":page,
+	})
 }

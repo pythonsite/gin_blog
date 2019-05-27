@@ -153,6 +153,11 @@ func PostGet(c *gin.Context) {
 	post.View++
 	_ = post.UpdateView()
 	post.Tags, _ = models.ListTagByPostId(id)
-	post.Comments, _ = ""
+	post.Comments, _ = models.ListCommentByPostID(id)
+	user, _ := c.Get(CONTEXT_USER_KEY)
+	c.HTML(http.StatusOK, "post/display.html",gin.H{
+		"post": post,
+		"user":user,
+	})
 
 }
