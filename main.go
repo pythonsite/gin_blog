@@ -34,7 +34,7 @@ func main() {
 	router.POST("/signup", controller.SignupPost)
 
 	router.GET("/post/:id", controller.PostGet)
-
+	router.GET("/link/:id", controller.LinkGet)
 
 	authorized := router.Group("/admin")
 	authorized.Use(AdminScopeRequired())

@@ -2,6 +2,7 @@ package controller
 
 import (
 	"gin_blog/models"
+	"github.com/astaxie/beego/logs"
 	"github.com/gin-gonic/gin"
 	"net/http"
 	"strconv"
@@ -110,4 +111,20 @@ func LinkDelete(c *gin.Context) {
 		return
 	}
 	res["succeed"] = true
+}
+
+func LinkGet(c *gin.Context) {
+	id := c.Param("id")
+	_id, _ := strconv.ParseInt(id, 10, 64)
+	link, err := models.GetLinkById(uint(_id))
+	if err != nil {
+		c.AbortWithStatus(http.StatusInternalServerError)
+		return
+	}
+	link.View++
+	err = link.Update()
+	if err != nil {
+		logs.Error("update link view error:%s",err)
+	}
+	c.Redirect(http.StatusFound, link.Url)
 }
