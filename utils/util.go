@@ -3,6 +3,7 @@ package utils
 import (
 	"crypto/md5"
 	"encoding/hex"
+	"github.com/snluu/uuid"
 	"net/smtp"
 	"strings"
 	"time"
@@ -39,4 +40,8 @@ func SendToMail(user, password, host, to, subject, body, mailType string) error 
 func GetCurrentTime() time.Time {
 	loc, _ := time.LoadLocation("Asia/Shanghai")
 	return time.Now().In(loc)
+}
+
+func UUID()string{
+	return uuid.Rand().Hex()
 }

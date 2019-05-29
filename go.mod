@@ -16,6 +16,7 @@ require (
 	github.com/pythonsite/iniConfig v0.0.0-20190522083436-7bb1daf30131
 	github.com/russross/blackfriday v2.0.0+incompatible
 	github.com/shurcooL/sanitized_anchor_name v1.0.0 // indirect
+	github.com/snluu/uuid v0.0.0-20130306162636-1dd34a9ad6c0 // indirect
 )
 
 replace (

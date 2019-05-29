@@ -1,11 +1,14 @@
 package controller
 
 import (
+	"fmt"
 	"gin_blog/models"
+	"gin_blog/utils"
 	"github.com/gin-gonic/gin"
 	"github.com/pkg/errors"
 	"net/http"
 	"strings"
+	"time"
 )
 
 func SubscriberIndex(c *gin.Context) {
@@ -59,9 +62,41 @@ func SubscriberPost(c *gin.Context) {
 	res["succeed"] = true
 }
 
-func SbuscribeGet(c *gin.Context) {
+func SubuscribeGet(c *gin.Context) {
 	count, _ := models.CountSubscriber()
 	c.HTML(http.StatusOK, "other/subscribe.html",gin.H{
 		"total": count,
 	})
+}
+
+func Subscribe(c *gin.Context) {
+	mail := c.PostForm("mail")
+	var err error
+	if len(mail) > 0 {
+		var subscriber *models.Subscriber
+		subscriber, err = models.GetSubscriberByEmail(mail)
+		if err == nil {
+			if !subscriber.VerifyState && utils.GetCurrentTime().After(subscriber.OutTime) {
+				err = sendActiveEmail(subscriber)
+				if err == nil {
+				//	TODO 订阅功能
+				}
+			}
+		}
+	}
+}
+
+func sendActiveEmail(subscriber *models.Subscriber) (err error) {
+	uuid := utils.UUID()
+	duration, _ := time.ParseDuration("30m")
+	subscriber.OutTime = utils.GetCurrentTime().Add(duration)
+	subscriber.SecretKey = uuid
+	signature := utils.Md5(subscriber.Email + uuid + subscriber.OutTime.Format("20060102150405"))
+	subscriber.Signature = signature
+	err = sendMail(subscriber.Email, "[icode blog]邮箱验证",fmt.Sprintf("%s/active?sid=%s", models.ConfigConent.CommonConfig.Domain, signature))
+	if err != nil {
+		return
+	}
+	err = subscriber.Update()
+	return
 }

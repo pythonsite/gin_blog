@@ -40,6 +40,8 @@ func main() {
 	router.GET("/tag/:tag", controller.TagGet)
 	router.GET("/archives/:year/:month", controller.ArchiveGet)
 
+	router.GET("/subscribe", controller.SubuscribeGet)
+
 	visitor := router.Group("/visitor")
 	visitor.Use(AuthRequired())
 	{
