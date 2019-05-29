@@ -33,6 +33,7 @@ func ListPostArchives()([]*QrArchive, error) {
 		var archive QrArchive
 		var month string
 		_ = rows.Scan(&month, &archive.Total)
+		//_ = DB.ScanRows(rows, &archive)
 		archive.ArchiveDate, _ = time.Parse("2006-01",month)
 		archive.Year = archive.ArchiveDate.Year()
 		archive.Month = int(archive.ArchiveDate.Month())
@@ -51,14 +52,16 @@ func ListPostByArchive(year, month string, pageIndex, pageSize int) ([]*Post,err
 		month = "0" + month
 	}
 	condition := fmt.Sprintf("%s-%s",year, month)
+	logs.Info(condition)
 	if pageIndex > 0 {
-		quersql := `select * from posts where date_format(created_at,'%Y-%m')= ? and is_published=? order by created_at desc limit ? offset ?`
-		rows, err = DB.Raw(quersql, condition, true, pageSize, (pageSize-1)*pageSize).Rows()
+		quersql := `select * from posts where date_format(created_at,'%Y-%m') = ? and is_published = ? order by created_at desc limit ? offset ?`
+		rows, err = DB.Raw(quersql, condition, true, pageSize, (pageIndex-1)*pageSize).Rows()
 	} else {
 		querysql := `select * from posts where date_format(created_at,'%Y-%m') = ? and is_published = ? order by created_at desc`
 		rows, err = DB.Raw(querysql, condition, true).Rows()
 	}
 	if err != nil {
+		logs.Error("error:%v",err)
 		return nil, err
 	}
 	defer rows.Close()
