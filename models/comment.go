@@ -48,3 +48,19 @@ func ListCommentByPostID(postId string)([]*Comment, error) {
 	}
 	return comments, err
 }
+
+func(comment *Comment) Insert() error {
+	return DB.Create(comment).Error
+}
+
+func(comment *Comment) Update() error {
+	return DB.Model(comment).UpdateColumn("read_state",true).Error
+}
+
+func(comment *Comment) Delete() error{
+	return DB.Delete(comment, "user_id=?", comment.UserID).Error
+}
+
+func SetAllCommentRead() error {
+	return DB.Model(&Comment{}).Where("read_state=?", false).Update("read_state=?", true).Error
+}

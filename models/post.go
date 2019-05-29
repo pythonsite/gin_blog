@@ -2,6 +2,9 @@ package models
 
 import (
 	"database/sql"
+	"github.com/microcosm-cc/bluemonday"
+	"github.com/russross/blackfriday"
+	"html/template"
 	"strconv"
 )
 
@@ -151,6 +154,18 @@ func (post *Post) UpdateView() error {
 		"view": post.View,
 	}).Error
 }
+
+func (post *Post) Excerpt() template.HTML {
+	policy := bluemonday.StrictPolicy()
+	sanitized := policy.Sanitize(string(blackfriday.Run([]byte(post.Body))))
+	runnes := []rune(sanitized)
+	if len(runnes) > 300 {
+		sanitized = string(runnes[:300])
+	}
+	excerpt := template.HTML(sanitized + "...")
+	return excerpt
+}
+
 
 
 

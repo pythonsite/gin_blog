@@ -5,6 +5,7 @@ import (
 	"encoding/hex"
 	"net/smtp"
 	"strings"
+	"time"
 )
 
 func Truncate(s string, n int) string {
@@ -33,4 +34,9 @@ func SendToMail(user, password, host, to, subject, body, mailType string) error 
 	msg := []byte("To: " + to + "\r\nFrom: " + user + "\r\nSubject: " + subject + "\r\n" + content_type + "\r\n\r\n" + body)
 	send_to := strings.Split(to, ";")
 	return smtp.SendMail(host, auth, user, send_to, msg)
+}
+
+func GetCurrentTime() time.Time {
+	loc, _ := time.LoadLocation("Asia/Shanghai")
+	return time.Now().In(loc)
 }

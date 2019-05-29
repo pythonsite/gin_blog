@@ -29,10 +29,15 @@ type SmtpConfig struct {
 	SmtpHost string `ini:"smtp_host"`
 }
 
+type CommonConfig struct {
+	Domain string `ini:"domain"`
+}
+
 type Config struct {
 	MysqlConf  MySqlConfig `ini:"mysql"`
 	PageSizeConfig PageSizeConfig `ini:"page_size"`
 	SmtpConfig SmtpConfig `ini:"smtp"`
+	CommonConfig CommonConfig `ini:"common"`
 }
 
 var ConfigConent *Config

@@ -24,6 +24,7 @@ func main() {
 	router.Static("/static", filepath.Join(getCurrentDirectory(), "./static"))
 	router.GET("/", controller.IndexGet)
 	router.GET("/index", controller.IndexGet)
+	router.GET("/rss", controller.RssGet)
 
 	router.GET("/signin", controller.SigninGet)
 	router.POST("/signin", controller.SigninPost)
@@ -38,6 +39,12 @@ func main() {
 	router.GET("/page/:id",controller.PageGet)
 	router.GET("/tag/:tag", controller.TagGet)
 	router.GET("/archives/:year/:month", controller.ArchiveGet)
+
+	visitor := router.Group("/visitor")
+	visitor.Use(AuthRequired())
+	{
+		visitor.POST("/new_comment", controller.CommentPost)
+	}
 
 
 	authorized := router.Group("/admin")
@@ -133,10 +140,15 @@ func AdminScopeRequired() gin.HandlerFunc {
 func AuthRequired() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		if user, _ := c.Get(controller.CONTEXT_USER_KEY);user != nil {
-			c.HTML(http.StatusForbidden, "errors/error.html", gin.H{
-				"message": "Forbiden!",
-			})
+			if u, ok := user.(*models.User); ok && u.IsAdmin {
+				c.Next()
+				return
+			}
 		}
+		logs.Error("user not authorized to visit %s", c.Request.RequestURI)
+		c.HTML(http.StatusForbidden, "errors/error.html", gin.H{
+			"message": "Forbidden!",
+		})
 		c.Abort()
 	}
 }
