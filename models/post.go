@@ -16,7 +16,7 @@ type Post struct {
 	IsPublished bool
 	Tags []*Tag			`gorm:"-"`
 	Comments []*Comment	`gorm:"-"`
-	CommentTotal int
+	CommentTotal int    `gorm:"-"` // count of comment
 }
 
 func listPost(tag string, published bool, pageIndex, pageSize int)([]*Post, error) {
@@ -98,7 +98,7 @@ func ListMaxCommentPost()(posts []*Post, err error) {
 	var (
 		rows *sql.Rows
 	)
-	rows, err = DB.Raw("select p.*,c.total comment_total from posts p inner join (select post_id, count(1) total from comments group by post_id) c on p.id=c.post_id order by c.total desc limit 5").Rows()
+	rows, err = DB.Raw("select p.*,c.total comment_total from posts p inner join (select post_id,count(*) total from comments group by post_id) c on p.id = c.post_id order by c.total desc limit 5").Rows()
 	if err != nil {
 		return
 	}
