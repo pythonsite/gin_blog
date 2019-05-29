@@ -1561,3 +1561,94 @@
 2019/05/29 14:21:45.321 [I]  models.Tag{BaseModel:models.BaseModel{ID:0x1, CreatedAt:time.Time{wall:0x0, ext:0, loc:(*time.Location)(nil)}, UpdatedAt:time.Time{wall:0x0, ext:0, loc:(*time.Location)(nil)}}, Name:"Python", Total:1}
 2019/05/29 14:21:45.321 [I]  models.Tag{BaseModel:models.BaseModel{ID:0x2, CreatedAt:time.Time{wall:0x0, ext:63694198061, loc:(*time.Location)(nil)}, UpdatedAt:time.Time{wall:0x0, ext:0, loc:(*time.Location)(nil)}}, Name:"Golang", Total:2}
 2019/05/29 14:21:45.321 [I]  all tags:[]*models.Tag{(*models.Tag)(0xc0001e23c0), (*models.Tag)(0xc0001e2460)}
+2019/05/29 14:26:48.417 [I]  init logs Adapter success
+2019/05/29 14:26:48.417 [I]  mysql dsn is:root:123456@(192.168.188.106:3306)/ginblog?charset=utf8&parseTime=True
+2019/05/29 14:26:48.425 [I]  gorm open db success
+2019/05/29 14:26:51.733 [I]  rows:&sql.Rows{dc:(*sql.driverConn)(0xc0001da000), releaseConn:(func(error))(0x504670), rowsi:(*mysql.binaryRows)(0xc000134370), cancel:(func())(nil), closeStmt:(*sql.driverStmt)(0xc000457ec0), closemu:sync.RWMutex{w:sync.Mutex{state:0, sema:0x0}, writerSem:0x0, readerSem:0x0, readerCount:0, readerWait:0}, closed:false, lasterr:error(nil), lastcols:[]driver.Value(nil)}
+2019/05/29 14:26:51.733 [I]  models.Tag{BaseModel:models.BaseModel{ID:0x1, CreatedAt:time.Time{wall:0x0, ext:0, loc:(*time.Location)(nil)}, UpdatedAt:time.Time{wall:0x0, ext:0, loc:(*time.Location)(nil)}}, Name:"Python", Total:1}
+2019/05/29 14:26:51.733 [I]  models.Tag{BaseModel:models.BaseModel{ID:0x2, CreatedAt:time.Time{wall:0x0, ext:63694198061, loc:(*time.Location)(nil)}, UpdatedAt:time.Time{wall:0x0, ext:0, loc:(*time.Location)(nil)}}, Name:"Golang", Total:2}
+2019/05/29 14:26:51.733 [I]  all tags:[]*models.Tag{(*models.Tag)(0xc0001343c0), (*models.Tag)(0xc000134460)}
+2019/05/29 14:30:30.601 [I]  init logs Adapter success
+2019/05/29 14:30:30.601 [I]  mysql dsn is:root:123456@(192.168.188.106:3306)/ginblog?charset=utf8&parseTime=True
+2019/05/29 14:30:30.605 [I]  gorm open db success
+2019/05/29 14:30:33.409 [I]  0
+2019/05/29 14:30:33.409 [I]  1
+2019/05/29 14:30:33.427 [I]  rows:&sql.Rows{dc:(*sql.driverConn)(0xc0001da000), releaseConn:(func(error))(0x504670), rowsi:(*mysql.binaryRows)(0xc0001c9a40), cancel:(func())(nil), closeStmt:(*sql.driverStmt)(0xc0003053c0), closemu:sync.RWMutex{w:sync.Mutex{state:0, sema:0x0}, writerSem:0x0, readerSem:0x0, readerCount:0, readerWait:0}, closed:false, lasterr:error(nil), lastcols:[]driver.Value(nil)}
+2019/05/29 14:30:33.427 [I]  models.Tag{BaseModel:models.BaseModel{ID:0x1, CreatedAt:time.Time{wall:0x0, ext:0, loc:(*time.Location)(nil)}, UpdatedAt:time.Time{wall:0x0, ext:0, loc:(*time.Location)(nil)}}, Name:"Python", Total:1}
+2019/05/29 14:30:33.427 [I]  models.Tag{BaseModel:models.BaseModel{ID:0x2, CreatedAt:time.Time{wall:0x0, ext:63694198061, loc:(*time.Location)(nil)}, UpdatedAt:time.Time{wall:0x0, ext:0, loc:(*time.Location)(nil)}}, Name:"Golang", Total:2}
+2019/05/29 14:30:33.427 [I]  all tags:[]*models.Tag{(*models.Tag)(0xc0001c9a90), (*models.Tag)(0xc0001c9b30)}
+2019/05/29 14:31:06.511 [I]  init logs Adapter success
+2019/05/29 14:31:06.511 [I]  mysql dsn is:root:123456@(192.168.188.106:3306)/ginblog?charset=utf8&parseTime=True
+2019/05/29 14:31:06.523 [I]  gorm open db success
+2019/05/29 14:31:10.617 [I]  0
+2019/05/29 14:31:10.617 [I]  1
+2019/05/29 14:31:10.622 [I]  1
+2019/05/29 14:31:10.627 [I]  rows:&sql.Rows{dc:(*sql.driverConn)(0xc0001e8000), releaseConn:(func(error))(0x504670), rowsi:(*mysql.binaryRows)(0xc000134140), cancel:(func())(nil), closeStmt:(*sql.driverStmt)(0xc0000479c0), closemu:sync.RWMutex{w:sync.Mutex{state:0, sema:0x0}, writerSem:0x0, readerSem:0x0, readerCount:0, readerWait:0}, closed:false, lasterr:error(nil), lastcols:[]driver.Value(nil)}
+2019/05/29 14:31:10.628 [I]  models.Tag{BaseModel:models.BaseModel{ID:0x1, CreatedAt:time.Time{wall:0x0, ext:0, loc:(*time.Location)(nil)}, UpdatedAt:time.Time{wall:0x0, ext:0, loc:(*time.Location)(nil)}}, Name:"Python", Total:1}
+2019/05/29 14:31:10.628 [I]  models.Tag{BaseModel:models.BaseModel{ID:0x2, CreatedAt:time.Time{wall:0x0, ext:63694198061, loc:(*time.Location)(nil)}, UpdatedAt:time.Time{wall:0x0, ext:0, loc:(*time.Location)(nil)}}, Name:"Golang", Total:2}
+2019/05/29 14:31:10.628 [I]  all tags:[]*models.Tag{(*models.Tag)(0xc000134190), (*models.Tag)(0xc000134230)}
+2019/05/29 14:32:13.850 [I]  init logs Adapter success
+2019/05/29 14:32:13.850 [I]  mysql dsn is:root:123456@(192.168.188.106:3306)/ginblog?charset=utf8&parseTime=True
+2019/05/29 14:32:13.855 [I]  gorm open db success
+2019/05/29 14:32:16.369 [I]  0
+2019/05/29 14:32:16.369 [I]  1
+2019/05/29 14:32:16.379 [I]  1
+2019/05/29 14:32:16.388 [I]  rows:&sql.Rows{dc:(*sql.driverConn)(0xc0001de000), releaseConn:(func(error))(0x504670), rowsi:(*mysql.binaryRows)(0xc0001e9720), cancel:(func())(nil), closeStmt:(*sql.driverStmt)(0xc0002b64c0), closemu:sync.RWMutex{w:sync.Mutex{state:0, sema:0x0}, writerSem:0x0, readerSem:0x0, readerCount:0, readerWait:0}, closed:false, lasterr:error(nil), lastcols:[]driver.Value(nil)}
+2019/05/29 14:32:16.388 [I]  models.Tag{BaseModel:models.BaseModel{ID:0x1, CreatedAt:time.Time{wall:0x0, ext:0, loc:(*time.Location)(nil)}, UpdatedAt:time.Time{wall:0x0, ext:0, loc:(*time.Location)(nil)}}, Name:"Python", Total:1}
+2019/05/29 14:32:16.388 [I]  models.Tag{BaseModel:models.BaseModel{ID:0x2, CreatedAt:time.Time{wall:0x0, ext:63694198061, loc:(*time.Location)(nil)}, UpdatedAt:time.Time{wall:0x0, ext:0, loc:(*time.Location)(nil)}}, Name:"Golang", Total:2}
+2019/05/29 14:32:16.388 [I]  all tags:[]*models.Tag{(*models.Tag)(0xc0001e9770), (*models.Tag)(0xc0001e9810)}
+2019/05/29 14:32:19.292 [I]  rows:&sql.Rows{dc:(*sql.driverConn)(0xc0001de000), releaseConn:(func(error))(0x504670), rowsi:(*mysql.binaryRows)(0xc0001e9ae0), cancel:(func())(nil), closeStmt:(*sql.driverStmt)(0xc0001d6500), closemu:sync.RWMutex{w:sync.Mutex{state:0, sema:0x0}, writerSem:0x0, readerSem:0x0, readerCount:0, readerWait:0}, closed:false, lasterr:error(nil), lastcols:[]driver.Value(nil)}
+2019/05/29 14:32:19.292 [I]  models.Tag{BaseModel:models.BaseModel{ID:0x1, CreatedAt:time.Time{wall:0x0, ext:0, loc:(*time.Location)(nil)}, UpdatedAt:time.Time{wall:0x0, ext:0, loc:(*time.Location)(nil)}}, Name:"Python", Total:1}
+2019/05/29 14:32:19.292 [I]  models.Tag{BaseModel:models.BaseModel{ID:0x2, CreatedAt:time.Time{wall:0x0, ext:63694198061, loc:(*time.Location)(nil)}, UpdatedAt:time.Time{wall:0x0, ext:0, loc:(*time.Location)(nil)}}, Name:"Golang", Total:2}
+2019/05/29 14:32:19.292 [I]  all tags:[]*models.Tag{(*models.Tag)(0xc0001e9b30), (*models.Tag)(0xc0001e9bd0)}
+2019/05/29 14:32:19.297 [I]  all archives is:[]*models.QrArchive{(*models.QrArchive)(0xc0000683f0)}
+2019/05/29 14:32:19.309 [I]  rows:&sql.Rows{dc:(*sql.driverConn)(0xc0001de000), releaseConn:(func(error))(0x504670), rowsi:(*mysql.binaryRows)(0xc000190280), cancel:(func())(nil), closeStmt:(*sql.driverStmt)(0xc0001b24c0), closemu:sync.RWMutex{w:sync.Mutex{state:0, sema:0x0}, writerSem:0x0, readerSem:0x0, readerCount:0, readerWait:0}, closed:false, lasterr:error(nil), lastcols:[]driver.Value(nil)}
+2019/05/29 14:32:19.310 [I]  models.Tag{BaseModel:models.BaseModel{ID:0x1, CreatedAt:time.Time{wall:0x0, ext:0, loc:(*time.Location)(nil)}, UpdatedAt:time.Time{wall:0x0, ext:0, loc:(*time.Location)(nil)}}, Name:"Python", Total:1}
+2019/05/29 14:32:19.310 [I]  models.Tag{BaseModel:models.BaseModel{ID:0x2, CreatedAt:time.Time{wall:0x0, ext:63694198061, loc:(*time.Location)(nil)}, UpdatedAt:time.Time{wall:0x0, ext:0, loc:(*time.Location)(nil)}}, Name:"Golang", Total:2}
+2019/05/29 14:32:19.310 [I]  all tags:[]*models.Tag{(*models.Tag)(0xc0001902d0), (*models.Tag)(0xc000190370)}
+2019/05/29 14:32:23.308 [I]  1
+2019/05/29 14:32:23.308 [I]  2
+2019/05/29 14:32:23.325 [I]  2
+2019/05/29 14:32:23.351 [I]  rows:&sql.Rows{dc:(*sql.driverConn)(0xc0001de000), releaseConn:(func(error))(0x504670), rowsi:(*mysql.binaryRows)(0xc0001907d0), cancel:(func())(nil), closeStmt:(*sql.driverStmt)(0xc0001b29c0), closemu:sync.RWMutex{w:sync.Mutex{state:0, sema:0x0}, writerSem:0x0, readerSem:0x0, readerCount:0, readerWait:0}, closed:false, lasterr:error(nil), lastcols:[]driver.Value(nil)}
+2019/05/29 14:32:23.351 [I]  models.Tag{BaseModel:models.BaseModel{ID:0x1, CreatedAt:time.Time{wall:0x0, ext:0, loc:(*time.Location)(nil)}, UpdatedAt:time.Time{wall:0x0, ext:0, loc:(*time.Location)(nil)}}, Name:"Python", Total:1}
+2019/05/29 14:32:23.351 [I]  models.Tag{BaseModel:models.BaseModel{ID:0x2, CreatedAt:time.Time{wall:0x0, ext:63694198061, loc:(*time.Location)(nil)}, UpdatedAt:time.Time{wall:0x0, ext:0, loc:(*time.Location)(nil)}}, Name:"Golang", Total:2}
+2019/05/29 14:32:23.352 [I]  all tags:[]*models.Tag{(*models.Tag)(0xc000190820), (*models.Tag)(0xc0001908c0)}
+2019/05/29 14:32:28.575 [I]  0
+2019/05/29 14:32:28.575 [I]  1
+2019/05/29 14:32:28.581 [I]  1
+2019/05/29 14:32:28.592 [I]  rows:&sql.Rows{dc:(*sql.driverConn)(0xc0001de000), releaseConn:(func(error))(0x504670), rowsi:(*mysql.binaryRows)(0xc000082280), cancel:(func())(nil), closeStmt:(*sql.driverStmt)(0xc0002b6200), closemu:sync.RWMutex{w:sync.Mutex{state:0, sema:0x0}, writerSem:0x0, readerSem:0x0, readerCount:0, readerWait:0}, closed:false, lasterr:error(nil), lastcols:[]driver.Value(nil)}
+2019/05/29 14:32:28.592 [I]  models.Tag{BaseModel:models.BaseModel{ID:0x1, CreatedAt:time.Time{wall:0x0, ext:0, loc:(*time.Location)(nil)}, UpdatedAt:time.Time{wall:0x0, ext:0, loc:(*time.Location)(nil)}}, Name:"Python", Total:1}
+2019/05/29 14:32:28.592 [I]  models.Tag{BaseModel:models.BaseModel{ID:0x2, CreatedAt:time.Time{wall:0x0, ext:63694198061, loc:(*time.Location)(nil)}, UpdatedAt:time.Time{wall:0x0, ext:0, loc:(*time.Location)(nil)}}, Name:"Golang", Total:2}
+2019/05/29 14:32:28.592 [I]  all tags:[]*models.Tag{(*models.Tag)(0xc0000822d0), (*models.Tag)(0xc000082370)}
+2019/05/29 14:32:34.188 [I]  1
+2019/05/29 14:32:34.188 [I]  2
+2019/05/29 14:32:34.192 [I]  2
+2019/05/29 14:32:34.196 [I]  rows:&sql.Rows{dc:(*sql.driverConn)(0xc0001de000), releaseConn:(func(error))(0x504670), rowsi:(*mysql.binaryRows)(0xc000112500), cancel:(func())(nil), closeStmt:(*sql.driverStmt)(0xc00016eb40), closemu:sync.RWMutex{w:sync.Mutex{state:0, sema:0x0}, writerSem:0x0, readerSem:0x0, readerCount:0, readerWait:0}, closed:false, lasterr:error(nil), lastcols:[]driver.Value(nil)}
+2019/05/29 14:32:34.196 [I]  models.Tag{BaseModel:models.BaseModel{ID:0x1, CreatedAt:time.Time{wall:0x0, ext:0, loc:(*time.Location)(nil)}, UpdatedAt:time.Time{wall:0x0, ext:0, loc:(*time.Location)(nil)}}, Name:"Python", Total:1}
+2019/05/29 14:32:34.196 [I]  models.Tag{BaseModel:models.BaseModel{ID:0x2, CreatedAt:time.Time{wall:0x0, ext:63694198061, loc:(*time.Location)(nil)}, UpdatedAt:time.Time{wall:0x0, ext:0, loc:(*time.Location)(nil)}}, Name:"Golang", Total:2}
+2019/05/29 14:32:34.196 [I]  all tags:[]*models.Tag{(*models.Tag)(0xc000112550), (*models.Tag)(0xc0001125f0)}
+2019/05/29 14:32:38.304 [I]  rows:&sql.Rows{dc:(*sql.driverConn)(0xc0001de000), releaseConn:(func(error))(0x504670), rowsi:(*mysql.binaryRows)(0xc0001903c0), cancel:(func())(nil), closeStmt:(*sql.driverStmt)(0xc000047140), closemu:sync.RWMutex{w:sync.Mutex{state:0, sema:0x0}, writerSem:0x0, readerSem:0x0, readerCount:0, readerWait:0}, closed:false, lasterr:error(nil), lastcols:[]driver.Value(nil)}
+2019/05/29 14:32:38.304 [I]  models.Tag{BaseModel:models.BaseModel{ID:0x1, CreatedAt:time.Time{wall:0x0, ext:0, loc:(*time.Location)(nil)}, UpdatedAt:time.Time{wall:0x0, ext:0, loc:(*time.Location)(nil)}}, Name:"Python", Total:1}
+2019/05/29 14:32:38.304 [I]  models.Tag{BaseModel:models.BaseModel{ID:0x2, CreatedAt:time.Time{wall:0x0, ext:63694198061, loc:(*time.Location)(nil)}, UpdatedAt:time.Time{wall:0x0, ext:0, loc:(*time.Location)(nil)}}, Name:"Golang", Total:2}
+2019/05/29 14:32:38.305 [I]  all tags:[]*models.Tag{(*models.Tag)(0xc000190410), (*models.Tag)(0xc0001904b0)}
+2019/05/29 14:32:38.309 [I]  all archives is:[]*models.QrArchive{(*models.QrArchive)(0xc0000684e0)}
+2019/05/29 14:32:38.322 [I]  rows:&sql.Rows{dc:(*sql.driverConn)(0xc0001de000), releaseConn:(func(error))(0x504670), rowsi:(*mysql.binaryRows)(0xc0001905f0), cancel:(func())(nil), closeStmt:(*sql.driverStmt)(0xc000047500), closemu:sync.RWMutex{w:sync.Mutex{state:0, sema:0x0}, writerSem:0x0, readerSem:0x0, readerCount:0, readerWait:0}, closed:false, lasterr:error(nil), lastcols:[]driver.Value(nil)}
+2019/05/29 14:32:38.322 [I]  models.Tag{BaseModel:models.BaseModel{ID:0x1, CreatedAt:time.Time{wall:0x0, ext:0, loc:(*time.Location)(nil)}, UpdatedAt:time.Time{wall:0x0, ext:0, loc:(*time.Location)(nil)}}, Name:"Python", Total:1}
+2019/05/29 14:32:38.322 [I]  models.Tag{BaseModel:models.BaseModel{ID:0x2, CreatedAt:time.Time{wall:0x0, ext:63694198061, loc:(*time.Location)(nil)}, UpdatedAt:time.Time{wall:0x0, ext:0, loc:(*time.Location)(nil)}}, Name:"Golang", Total:2}
+2019/05/29 14:32:38.322 [I]  all tags:[]*models.Tag{(*models.Tag)(0xc000190640), (*models.Tag)(0xc0001906e0)}
+2019/05/29 14:32:40.964 [I]  2
+2019/05/29 14:32:40.964 [I]  3
+2019/05/29 14:32:40.971 [I]  3
+2019/05/29 14:32:40.976 [I]  rows:&sql.Rows{dc:(*sql.driverConn)(0xc0001de000), releaseConn:(func(error))(0x504670), rowsi:(*mysql.binaryRows)(0xc000082b40), cancel:(func())(nil), closeStmt:(*sql.driverStmt)(0xc000432800), closemu:sync.RWMutex{w:sync.Mutex{state:0, sema:0x0}, writerSem:0x0, readerSem:0x0, readerCount:0, readerWait:0}, closed:false, lasterr:error(nil), lastcols:[]driver.Value(nil)}
+2019/05/29 14:32:40.977 [I]  models.Tag{BaseModel:models.BaseModel{ID:0x1, CreatedAt:time.Time{wall:0x0, ext:0, loc:(*time.Location)(nil)}, UpdatedAt:time.Time{wall:0x0, ext:0, loc:(*time.Location)(nil)}}, Name:"Python", Total:1}
+2019/05/29 14:32:40.977 [I]  models.Tag{BaseModel:models.BaseModel{ID:0x2, CreatedAt:time.Time{wall:0x0, ext:63694198061, loc:(*time.Location)(nil)}, UpdatedAt:time.Time{wall:0x0, ext:0, loc:(*time.Location)(nil)}}, Name:"Golang", Total:2}
+2019/05/29 14:32:40.977 [I]  all tags:[]*models.Tag{(*models.Tag)(0xc000082b90), (*models.Tag)(0xc000082c30)}
+2019/05/29 14:32:43.458 [I]  rows:&sql.Rows{dc:(*sql.driverConn)(0xc0001de000), releaseConn:(func(error))(0x504670), rowsi:(*mysql.binaryRows)(0xc0001e9b30), cancel:(func())(nil), closeStmt:(*sql.driverStmt)(0xc000207c80), closemu:sync.RWMutex{w:sync.Mutex{state:0, sema:0x0}, writerSem:0x0, readerSem:0x0, readerCount:0, readerWait:0}, closed:false, lasterr:error(nil), lastcols:[]driver.Value(nil)}
+2019/05/29 14:32:43.458 [I]  models.Tag{BaseModel:models.BaseModel{ID:0x1, CreatedAt:time.Time{wall:0x0, ext:0, loc:(*time.Location)(nil)}, UpdatedAt:time.Time{wall:0x0, ext:0, loc:(*time.Location)(nil)}}, Name:"Python", Total:1}
+2019/05/29 14:32:43.458 [I]  models.Tag{BaseModel:models.BaseModel{ID:0x2, CreatedAt:time.Time{wall:0x0, ext:63694198061, loc:(*time.Location)(nil)}, UpdatedAt:time.Time{wall:0x0, ext:0, loc:(*time.Location)(nil)}}, Name:"Golang", Total:2}
+2019/05/29 14:32:43.458 [I]  all tags:[]*models.Tag{(*models.Tag)(0xc0001e9b80), (*models.Tag)(0xc0001e9c20)}
+2019/05/29 14:32:43.460 [I]  all archives is:[]*models.QrArchive{(*models.QrArchive)(0xc00044ae40)}
+2019/05/29 14:32:43.465 [I]  rows:&sql.Rows{dc:(*sql.driverConn)(0xc0001de000), releaseConn:(func(error))(0x504670), rowsi:(*mysql.binaryRows)(0xc0001e9db0), cancel:(func())(nil), closeStmt:(*sql.driverStmt)(0xc0001b2180), closemu:sync.RWMutex{w:sync.Mutex{state:0, sema:0x0}, writerSem:0x0, readerSem:0x0, readerCount:0, readerWait:0}, closed:false, lasterr:error(nil), lastcols:[]driver.Value(nil)}
+2019/05/29 14:32:43.465 [I]  models.Tag{BaseModel:models.BaseModel{ID:0x1, CreatedAt:time.Time{wall:0x0, ext:0, loc:(*time.Location)(nil)}, UpdatedAt:time.Time{wall:0x0, ext:0, loc:(*time.Location)(nil)}}, Name:"Python", Total:1}
+2019/05/29 14:32:43.465 [I]  models.Tag{BaseModel:models.BaseModel{ID:0x2, CreatedAt:time.Time{wall:0x0, ext:63694198061, loc:(*time.Location)(nil)}, UpdatedAt:time.Time{wall:0x0, ext:0, loc:(*time.Location)(nil)}}, Name:"Golang", Total:2}
+2019/05/29 14:32:43.465 [I]  all tags:[]*models.Tag{(*models.Tag)(0xc0001e9e00), (*models.Tag)(0xc0001e9ea0)}

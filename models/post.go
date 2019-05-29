@@ -148,9 +148,7 @@ func GetPostById(id string) (*Post, error) {
 
 func (post *Post) UpdateView() error {
 	return DB.Model(post).Updates(map[string]interface{}{
-		"title": post.Title,
-		"body": post.Body,
-		"is_published": post.IsPublished,
+		"view": post.View,
 	}).Error
 }
 

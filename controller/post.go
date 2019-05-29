@@ -150,8 +150,11 @@ func PostGet(c *gin.Context) {
 		Handle404(c)
 		return
 	}
+	logs.Info(post.View)
 	post.View++
+	logs.Info(post.View)
 	_ = post.UpdateView()
+	logs.Info(post.View)
 	post.Tags, _ = models.ListTagByPostId(id)
 	post.Comments, _ = models.ListCommentByPostID(id)
 	user, _ := c.Get(CONTEXT_USER_KEY)
