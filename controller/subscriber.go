@@ -79,11 +79,48 @@ func Subscribe(c *gin.Context) {
 			if !subscriber.VerifyState && utils.GetCurrentTime().After(subscriber.OutTime) {
 				err = sendActiveEmail(subscriber)
 				if err == nil {
-				//	TODO 订阅功能
+					count, _ := models.CountSubscriber()
+					c.HTML(http.StatusOK, "other/subscribe.html", gin.H{
+						"message": "subscribe succeed",
+						"total": count,
+					})
+					return
+				}
+			} else if subscriber.VerifyState && !subscriber.SubscribeState {
+				subscriber.SubscribeState = true
+				err = subscriber.Update()
+				if err == nil {
+					err = errors.New("subscribe succeed")
+				}
+			} else {
+				err = errors.New("mail have already actived or have unactive mail in your mailbox")
+			}
+		} else {
+			subscriber := &models.Subscriber{
+				Email:mail,
+			}
+			err = subscriber.Insert()
+			if err == nil {
+				err = sendActiveEmail(subscriber)
+				if err == nil {
+					count, _ := models.CountSubscriber()
+					c.HTML(http.StatusOK, "other/subscribe.html",gin.H{
+						"message": "subscribe succeed",
+						"total": count,
+					})
+					return
 				}
 			}
 		}
+	} else {
+		err = errors.New("empty mail address")
 	}
+	count, _ := models.CountSubscriber()
+	c.HTML(http.StatusOK, "other/subscirbe.html", gin.H{
+		"message": err.Error(),
+		"total": count,
+	})
+
 }
 
 func sendActiveEmail(subscriber *models.Subscriber) (err error) {

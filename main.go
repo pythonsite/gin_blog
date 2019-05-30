@@ -41,6 +41,7 @@ func main() {
 	router.GET("/archives/:year/:month", controller.ArchiveGet)
 
 	router.GET("/subscribe", controller.SubuscribeGet)
+	router.POST("/subscribe", controller.Subscribe)
 
 	visitor := router.Group("/visitor")
 	visitor.Use(AuthRequired())
