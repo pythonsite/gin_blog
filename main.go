@@ -88,6 +88,10 @@ func main() {
 		authorized.POST("/link/:id/edit", controller.LinkUpdate)
 		authorized.POST("/link/:id/delete", controller.LinkDelete)
 
+		// comment
+		authorized.POST("/comment/:id", controller.CommentRead)
+		authorized.POST("/read_all", controller.CommentReadAll)
+
 	}
 	err := router.Run(":8090")
 	if err != nil {

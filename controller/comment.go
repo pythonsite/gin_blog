@@ -47,3 +47,41 @@ func CommentPost(c *gin.Context) {
 	logs.Info("%s-%s-%s",post.ID, post.Title, content)
 	res["succeed"] = true
 }
+
+func CommentRead(c *gin.Context) {
+	var (
+		id string
+		_id uint64
+		err error
+		res = gin.H{}
+	)
+	defer writeJson(c, res)
+	id = c.Param("id")
+	_id, err = strconv.ParseUint(id, 10, 64)
+	if err != nil {
+		res["message"] = err.Error()
+		return
+	}
+	comment := new(models.Comment)
+	comment.ID = uint(_id)
+	err = comment.Update()
+	if err != nil {
+		res["message"] = err.Error()
+		return
+	}
+	res["succeed"] = true
+}
+
+func CommentReadAll(c *gin.Context) {
+	var (
+		err error
+		res = gin.H{}
+	)
+	defer writeJson(c, res)
+	err = models.SetAllCommentRead()
+	if err != nil {
+		res["message"] = err.Error()
+		return
+	}
+	res["succeed"] = true
+}
