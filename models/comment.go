@@ -62,5 +62,5 @@ func(comment *Comment) Delete() error{
 }
 
 func SetAllCommentRead() error {
-	return DB.Model(&Comment{}).Where("read_state=?", false).Update("read_state=?", true).Error
+	return DB.Model(&Comment{}).Where("read_state=?", false).Update("read_state", true).Error
 }
